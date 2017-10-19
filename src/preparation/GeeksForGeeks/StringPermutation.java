@@ -25,27 +25,9 @@ public  class StringPermutation {
     }
 
     public static void main(String[] args) {
-        permutation("aabc");
+        permutation("abc");
         for(Object s: hs)
             System.out.println(s);
 
     }
 }
-
-//import java.util.HashSet;
-//
-//class StringSubsequence{
-//     static HashSet hs = new HashSet();
-//    public static void combinations(String suffix,String prefix){
-//        if(prefix.length()<0)return;
-//        hs.add(suffix);
-//        for(int i=0;i<prefix.length();i++)
-//            combinations(suffix+prefix.charAt(i),prefix.substring(i+1,prefix.length()));
-//    }
-//
-//    public static void main (String args[]){
-//        combinations("","abc");
-//        for(Object s: hs)
-//            System.out.println(s);
-//    }
-//}
