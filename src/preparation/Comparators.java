@@ -38,6 +38,9 @@ public class Comparators {
             System.out.println(m.getKey()+" "+m.getValue());
         }
         System.out.println("After sorting");
+        String temp = "hi.i,am";
+        temp = temp.replace("."," ").replace(","," ");
+        System.out.println(temp);
 
         Map<String, Integer> map = sortByValue(hs);
 
