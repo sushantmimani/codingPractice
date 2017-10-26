@@ -34,7 +34,6 @@ public class ElectronicsShop {
         for(int drives_i=0; drives_i < m; drives_i++){
             drives[drives_i] = in.nextInt();
         }
-        //  The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
         int moneySpent = getMoneySpent(keyboards, drives, s);
         System.out.println(moneySpent);
     }
