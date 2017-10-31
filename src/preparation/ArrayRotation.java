@@ -54,6 +54,9 @@ public class ArrayRotation {
         System.out.println("After simple rotation"+ Arrays.toString(arr));
         betterRotation(arr1, n, d);
         System.out.println("After better rotation"+ Arrays.toString(arr1));
+
+        int c = 'S';
+        System.out.println(c);
     }
 
 }

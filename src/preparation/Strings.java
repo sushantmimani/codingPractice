@@ -131,6 +131,56 @@ public class Strings {
         sb.append(s1).append(s1);
         return sb.toString().contains(s2);
     }
+
+
+
+    public static int deleteDistance(String s1, String s2){
+
+        int len1 = s1.length();
+        int len2 = s2.length();
+        int count =0;
+        if(len1==len2){
+            for(int i=0;i<len1;i++){
+                if(s1.charAt(i)!= s2.charAt(i))
+                    count = count+s1.charAt(i)+s2.charAt(i);
+            }
+        }
+        else if(len1>len2){
+            int i=0;
+            int j=0;
+            while(i<len1 && j<len2){
+                if(s2.charAt(j)!=s1.charAt(i)){
+                    count = count+s1.charAt(i);
+                    i++;
+                } else {
+                    i++;
+                    j++;
+                }
+            }
+            while(i<len1){
+                count = count +s1.charAt(i);
+                i++;
+            }
+        } else {
+            int i=0;
+            int j=0;
+            while(i<len1 && j<len2){
+                if(s1.charAt(i)!=s2.charAt(j)){
+                    count = count+s2.charAt(i);
+                    j++;
+                } else {
+                    i++;
+                    j++;
+                }
+            }
+            while(j<len2){
+                count = count +s2.charAt(j);
+                j++;
+            }
+        }
+
+        return count;
+    }
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -147,9 +197,10 @@ public class Strings {
 //        System.out.println(result);
 //        System.out.println(palindromePermutation("yalam mala "));
 //        System.out.println(oneAway("pale", "pale"));
-        String result = stringCompress("aaaaaaaxxxxbcd");
-        System.out.println(result);
+//        String result = stringCompress("aaaaaaaxxxxbcd");
+//        System.out.println(result);
 //        System.out.println(rotateString("waterbottle","erbottlewat"));
+        System.out.println(deleteDistance("at","cat"));
     }
 
     public static boolean replace(String s1, String s2){

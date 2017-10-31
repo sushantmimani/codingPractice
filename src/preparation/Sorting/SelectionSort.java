@@ -1,4 +1,4 @@
-package preparation;
+package preparation.Sorting;
 
 import java.util.*;
 
@@ -14,16 +14,19 @@ public class SelectionSort {
         int minIndex =0;
 
         for(int i=0;i<unsorted.length;i++){
-            int min = unsorted[i];
+            minIndex = i;
             for(int j=i+1;j<unsorted.length;j++){
-                if(unsorted[j]<=min){
-                    min = unsorted[j];
+                if(unsorted[j]<=unsorted[minIndex]){
                     minIndex = j;
                 }
             }
-            int temp = unsorted[i];
-            unsorted[i] = unsorted[minIndex];
-            unsorted[minIndex] = temp;
+            if(minIndex!=i){
+                int temp = unsorted[i];
+                unsorted[i] = unsorted[minIndex];
+                unsorted[minIndex] = temp;
+            }
+
+
         }
 
         System.out.println(Arrays.toString(unsorted));

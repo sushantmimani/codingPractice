@@ -1,4 +1,4 @@
-package preparation;
+package preparation.Sorting;
 
 // Java program for implementation of QuickSort
 class QuickSort

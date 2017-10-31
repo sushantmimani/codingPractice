@@ -1,4 +1,4 @@
-package preparation.BinarySearchTree;
+package preparation.BinaryTree;
 
 class Node {
     int data;
@@ -13,5 +13,7 @@ class Node {
 
     public Node(int data){
         this.data=data;
+        this.left=null;
+        this.right=null;
     }
 }
