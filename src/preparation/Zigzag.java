@@ -1,5 +1,6 @@
 package preparation;
 
+import java.util.Stack;
 import java.util.TreeSet;
 
 public class Zigzag {
@@ -36,5 +37,10 @@ public class Zigzag {
         System.out.println(s.size());
         s.pollFirst();
         System.out.println(s.size());
+
+        Stack<Character> st = new Stack<>();
+        st.push('c');
+        System.out.println(st.pop());
+
     }
 }

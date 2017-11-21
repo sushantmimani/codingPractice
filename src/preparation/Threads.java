@@ -36,16 +36,13 @@ public class Threads {
         Scanner sc = new Scanner(System.in);
         count = sc.nextInt();
         Threads threads = new Threads();
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    threads.testFunc();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread t1 = new Thread(() -> {
+            try {
+                threads.testFunc();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });
+        },"Even-Thread");
 
         Thread t2 = new Thread(new Runnable() {
             @Override
@@ -56,9 +53,7 @@ public class Threads {
                     e.printStackTrace();
                 }
             }
-        });
-        t1.setName("Even-Thread");
-        t2.setName("Odd-Thread");
+        },"Odd-Thread");
         t1.start();
         t2.start();
     }

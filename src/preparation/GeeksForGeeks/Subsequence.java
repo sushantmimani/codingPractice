@@ -9,7 +9,7 @@ import java.util.HashSet;
 
 public  class Subsequence {
 
-    static HashSet hs = new HashSet();
+    static HashSet<String> hs = new HashSet();
 
     public static void combinations(String prefix,String str){
 
@@ -22,7 +22,7 @@ public  class Subsequence {
 
     public static void main (String args[]){
         combinations("","abc");
-        for(Object s: hs)
+        for(String s: hs)
             System.out.println(s);
     }
 }

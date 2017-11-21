@@ -29,7 +29,6 @@ public class maxRepeatingCharacter {
                 if(count>max){
                     max = count;
                     maxChar = s.charAt(i);
-                    ;
                 }
             }
             else{

@@ -47,6 +47,25 @@ public class BinaryTree {
         }
     }
 
+    public static void levels(Node root){
+        int height = height(root);
+        for(int i=1;i<=height;i++){
+            printByLevel(root, i);
+            System.out.println();
+        }
+    }
+
+    public static void printByLevel(Node root, int depth){
+        if(root==null)
+            return;
+        if(depth==1)
+            System.out.print(root.data+" ");
+        else{
+        printByLevel(root.left, depth-1);
+        printByLevel(root.right, depth-1);
+        }
+    }
+
     public static boolean findPath(Node root, int data, ArrayList<Integer> list) {
         if (root == null)
             return false;
@@ -236,7 +255,7 @@ public class BinaryTree {
 //        System.out.println();
 //        levelOrder(root1);
 //        System.out.println("\nHeight of tree is:"+height(root));
-        System.out.println("Least Common Ancestor:"+leastCommonAncestor(root, 2, 4));
+//        System.out.println("Least Common Ancestor:"+leastCommonAncestor(root, 2, 4));
 //        distanceBetweenNodes(root, 4, 3);
 //        System.out.println(sameTree(root, root1));
 //
@@ -283,5 +302,8 @@ public class BinaryTree {
 
 //        System.out.println(isSubtree(root4, root1));
 //        System.out.println(nodeLevel(root4, 2,1));
+
+        levels(root1);
     }
+
 }

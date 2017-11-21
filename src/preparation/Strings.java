@@ -1,5 +1,6 @@
 package preparation;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -136,48 +137,64 @@ public class Strings {
 
     public static int deleteDistance(String s1, String s2){
 
-        int len1 = s1.length();
-        int len2 = s2.length();
-        int count =0;
-        if(len1==len2){
-            for(int i=0;i<len1;i++){
-                if(s1.charAt(i)!= s2.charAt(i))
-                    count = count+s1.charAt(i)+s2.charAt(i);
-            }
+        int[] a = new int[256];
+        for(int i=0;i<s1.length();i++){
+            a[s1.charAt(i)]++;
         }
-        else if(len1>len2){
-            int i=0;
-            int j=0;
-            while(i<len1 && j<len2){
-                if(s2.charAt(j)!=s1.charAt(i)){
-                    count = count+s1.charAt(i);
-                    i++;
-                } else {
-                    i++;
-                    j++;
-                }
-            }
-            while(i<len1){
-                count = count +s1.charAt(i);
-                i++;
-            }
-        } else {
-            int i=0;
-            int j=0;
-            while(i<len1 && j<len2){
-                if(s1.charAt(i)!=s2.charAt(j)){
-                    count = count+s2.charAt(i);
-                    j++;
-                } else {
-                    i++;
-                    j++;
-                }
-            }
-            while(j<len2){
-                count = count +s2.charAt(j);
-                j++;
-            }
+        for(int i=0;i<s2.length();i++){
+            a[s2.charAt(i)]--;
         }
+        int count=0;
+        for(int i=0;i<256;i++){
+            if(a[i]!=0)
+                count+=i;
+
+        }
+
+
+//        int len1 = s1.length();
+//        int len2 = s2.length();
+//        int count =0;
+//        if(len1==len2){
+//            for(int i=0;i<len1;i++){
+//                if(s1.charAt(i)!= s2.charAt(i))
+//                    count = count+s1.charAt(i)+s2.charAt(i);
+//            }
+//        }
+//        else if(len1>len2){
+//            int i=0;
+//            int j=0;
+//            while(i<len1 && j<len2){
+//                if(s2.charAt(j)!=s1.charAt(i)){
+//                    count = count+s1.charAt(i);
+//                    i++;
+//                    j++;
+//                } else {
+//                    i++;
+//                    j++;
+//                }
+//            }
+//            while(i<len1){
+//                count = count +s1.charAt(i);
+//                i++;
+//            }
+//        } else {
+//            int i=0;
+//            int j=0;
+//            while(i<len1 && j<len2){
+//                if(s1.charAt(i)!=s2.charAt(j)){
+//                    count = count+s2.charAt(i);
+//                    j++;
+//                } else {
+//                    i++;
+//                    j++;
+//                }
+//            }
+//            while(j<len2){
+//                count = count +s2.charAt(j);
+//                j++;
+//            }
+//        }
 
         return count;
     }
@@ -200,7 +217,7 @@ public class Strings {
 //        String result = stringCompress("aaaaaaaxxxxbcd");
 //        System.out.println(result);
 //        System.out.println(rotateString("waterbottle","erbottlewat"));
-        System.out.println(deleteDistance("at","cat"));
+        System.out.println(deleteDistance("thought","sloughs"));
     }
 
     public static boolean replace(String s1, String s2){
