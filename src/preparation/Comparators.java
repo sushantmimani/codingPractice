@@ -10,6 +10,11 @@ public class Comparators {
         List<Map.Entry<String, Integer>> list =
                 new LinkedList<Map.Entry<String, Integer>>(unsortMap.entrySet());
 
+        // You can use a lambda function like this
+
+        // Collections.sort(list, (o1, o2) -> (o1.getValue()).compareTo(o2.getValue()));
+
+
         // Sort list with Collections.sort(), provide a custom Comparator
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             public int compare(Map.Entry<String, Integer> o1,

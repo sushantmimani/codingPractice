@@ -9,7 +9,7 @@ public class SubSequence {
 
         public static String[] buildSubsequence(String s){
 
-            combinations("","ba");
+            combinations("",s);
              String[] result = hs.toArray(new String[hs.size()]);
              return result;
         }
