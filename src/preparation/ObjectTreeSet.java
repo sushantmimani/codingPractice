@@ -37,8 +37,21 @@ public class ObjectTreeSet {
         ts.add(m2);
         ts.add(m3);
         ts.add(m4);
+        System.out.println("Sorted data in TreeSet");
         for(Movie m : ts)
             System.out.println(m.name+" "+m.rating);
+        ArrayList<Movie> al = new ArrayList<>();
+        al.add(m1);
+        al.add(m2);
+        al.add(m3);
+        al.add(m4);
+        Collections.sort(al, new movieComparator());
+        System.out.println("Sorted data in ArrayList");
+
+        for(Movie m : al)
+            System.out.println(m.name+" "+m.rating);
     }
+
+
 
 }
