@@ -19,7 +19,13 @@ public class Comparators {
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             public int compare(Map.Entry<String, Integer> o1,
                                Map.Entry<String, Integer> o2) {
-                return (o1.getValue()).compareTo(o2.getValue());
+                if (o1.getValue() > o2.getValue())
+                    return 1;
+                else if (o1.getValue() < o2.getValue())
+                    return -1;
+                else {
+                    return (o1.getKey().compareTo(o2.getKey()));
+                }
             }
         });
 
@@ -35,13 +41,14 @@ public class Comparators {
         HashMap<String,Integer> hs = new HashMap<>();
 
         hs.put("third",3);
-        hs.put("fourth",4);
+        hs.put("fourth",2);
         hs.put("second",2);
         hs.put("first",1);
 
         for (Map.Entry<String, Integer> m: hs.entrySet()){
             System.out.println(m.getKey()+" "+m.getValue());
         }
+        System.out.println("===============");
         Map<String, Integer> map = sortByValue(hs);
 
         for (Map.Entry<String, Integer> m: map.entrySet()){

@@ -29,18 +29,8 @@ public class Zigzag {
     }
 
     public static void main(String[] args) {
-//        int a[] = {5, 3, 5, 3};
         int a[] = {9, 8, 8, 5, 3, 5, 3, 2, 8, 6};
         System.out.println(zigzag(a));
-        TreeSet s = new TreeSet();
-        s.add("ABS");
-        System.out.println(s.size());
-        s.pollFirst();
-        System.out.println(s.size());
-
-        Stack<Character> st = new Stack<>();
-        st.push('c');
-        System.out.println(st.pop());
 
     }
 }

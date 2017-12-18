@@ -7,7 +7,6 @@ public class BinaryTree {
 
     static ArrayList<Integer> path1 = new ArrayList<>();
     static ArrayList<Integer> path2 = new ArrayList<>();
-    static ArrayList<Integer> path3 = new ArrayList<>();
 
 
     public static void inOrder(Node root) {
@@ -269,7 +268,7 @@ public class BinaryTree {
         a.add(7);
 
         Node root2 = treeFromList(a);
-//        preOrder(root2);
+        preOrder(root2);
 //
 
 //

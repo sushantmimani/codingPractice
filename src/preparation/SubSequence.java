@@ -13,13 +13,13 @@ public class SubSequence {
              String[] result = hs.toArray(new String[hs.size()]);
              return result;
         }
-    public static TreeSet<String> combinations(String suffix,String prefix){
-        if(prefix.length()<0)
+    public static TreeSet<String> combinations(String prefix,String suffix){
+        if(suffix.length()<0)
             return new TreeSet<String>();
-        if(!suffix.equals(""))
-            hs.add(suffix);
-        for(int i=0;i<prefix.length();i++)
-            combinations(suffix+prefix.charAt(i),prefix.substring(i+1,prefix.length()));
+        if(!prefix.equals(""))
+            hs.add(prefix);
+        for(int i=0;i<suffix.length();i++)
+            combinations(prefix+suffix.charAt(i),suffix.substring(i+1,suffix.length()));
         return hs;
     }
 

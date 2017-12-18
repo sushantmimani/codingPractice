@@ -97,6 +97,17 @@ public class BinarySearchTree {
 
     }
 
+    public static boolean sameTree(Node root1, Node root2){
+        if(root1 == null && root2==null)
+            return true;
+        if(root1==null || root2==null)
+                return false;
+        else
+            return sameTree(root1.left, root2.left)
+                    &&sameTree(root1.right, root2.right)
+                    && root1.data==root2.data;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
         tree.root = new Node(20);
@@ -106,15 +117,23 @@ public class BinarySearchTree {
         tree.root.left.right = new Node(12);
         tree.root.left.right.left = new Node(10);
         tree.root.left.right.right = new Node(14);
+        BinarySearchTree tree1 = new BinarySearchTree();
+        tree1.root = new Node(20);
+        tree1.root.left = new Node(8);
+        tree1.root.right = new Node(22);
+        tree1.root.left.left = new Node(4);
+        tree1.root.left.right = new Node(12);
+        tree1.root.left.right.left = new Node(10);
+        tree1.root.left.right.right = new Node(14);
 //        tree.inOrder(tree.root);
 //        System.out.println();
 //        tree.inOrderIterative(tree.root);
 //        System.out.println(tree.leastCommonAncestor(tree.root, 4, 22).data);
-        tree.preOrder(tree.root);
-        System.out.println();
-        tree.preOrderIterative(tree.root);
-        System.out.println();
-        tree.postOrder(tree.root);
-
+//        tree.preOrder(tree.root);
+//        System.out.println();
+//        tree.preOrderIterative(tree.root);
+//        System.out.println();
+//        tree.postOrder(tree.root);
+        System.out.println(sameTree(tree.root, tree1.root));
     }
 }
